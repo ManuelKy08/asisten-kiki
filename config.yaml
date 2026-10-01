@@ -1,0 +1,99 @@
+assistant:
+  name: Kiki
+  lang: id
+
+face:
+  width: 420
+  height: 560
+  scale: 2                 # render supersampling
+  pos: bottom-right        # bottom-right | bottom-left | top-right | top-left | center | custom
+  custom_pos: [60, 60]     # custom_pos: [x, y] dari kiri-atas
+  margin: 36
+  subtitle: true
+  transparent: true
+  always_on_top: true
+  hide_taskbar: true
+  fps: 30
+  body: "#6ee7ff"         # warna avatar
+  body_dark: "#3aa7d8"
+  accent: "#ffd166"
+
+stt:
+  model: ""                # kosong -> otomatis pakai model "id-small" (download sekali)
+  device: ""               # kosong -> pilih otomatis (device inputcontaining 'mic'/'usb')
+  sample_rate: 16000
+  wake_words: ["kiki", "hai kiki", "hey kiki", "oke kiki", "ki", "halo", "asisten"]
+  require_wake: true
+  wake_min_confidence: 0.3
+  silence_ms: 1100         # diam sebelum dianggap selesai bicara
+  max_utterance_s: 15
+  min_words: 1
+  mic_rms_gate: 0.006      # abaikan suara terlalu pelan
+
+tts:
+  engine: auto             # auto | piper | espeak | none
+  piper_bin: piper
+  piper_model: ""          # diisi otomatis oleh install.sh (id_ID)
+  piper_bin_dir: ""
+  espeak_bin: espeak-ng
+  espeak_voice: "id"
+  rate: 1.0
+  pitch: 50
+
+brain:
+  ai_enabled: false        # true -> pakai Ollama (localhost:11434) untuk tanya-jawab bebas
+  ai_endpoint: http://localhost:11434
+  ai_model: llama3.1:8b
+  ai_api_key: ""
+  history: 8
+  system: "Kamu Kiki, asisten suara desktop yang hangat dan care. Jawab singkat dan hangat dalam Bahasa Indonesia. Kalau cuma mau curhat, dengarkan dan empati, jangan buru-buru memberi saran."
+
+shell:
+  terminal: auto
+  browser: auto
+  file_manager: auto
+  screenshot_cmd: auto      # scrot | maim | grim
+  clipboard_read: auto      # xclip -o | wl-paste
+  clipboard_write: auto     # xclip -i | wl-copy
+
+media:
+  volume_step: 8            # persen per perintah
+
+apps:
+  browser: auto
+  firefox: firefox
+  chromium: chromium
+  chrome: google-chrome-stable
+  terminal: auto
+  files: auto
+  text_editor: auto
+  terminal emulator: auto   # dibuang saat load
+
+sites:
+  youtube: https://www.youtube.com
+  youtube music: https://music.youtube.com
+  google: https://www.google.com
+  gmail: https://mail.google.com
+  drive: https://drive.google.com
+  maps: https://maps.google.com
+  whatsapp: https://web.whatsapp.com
+  instagram: https://instagram.com
+  facebook: https://facebook.com
+  tiktok: https://www.tiktok.com
+  x: https://x.com
+  twitter: https://x.com
+  reddit: https://www.reddit.com
+  github: https://github.com
+  wikipedia: https://id.wikipedia.org
+  wikipedia id: https://id.wikipedia.org
+  netflix: https://www.netflix.com
+  spotify: https://open.spotify.com
+  tokopedia: https://www.tokopedia.com
+  shopee: https://shopee.co.id
+  bukalapak: https://www.bukalapak.com
+  steam: https://store.steampowered.com
+  blibli: https://www.blibli.com
+
+security:
+  confirm_power: true       # minta konfirmasi sebelum suspend/reboot/shutdown
+  allow_power: true

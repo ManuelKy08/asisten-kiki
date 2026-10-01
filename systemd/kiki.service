@@ -1,0 +1,16 @@
+[Unit]
+Description=Kiki - asisten suara dengan wajah animasi
+After=graphical-session.target pipewire.service pulseaudio.service
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/vivy start
+Restart=on-failure
+RestartSec=3
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=%h/.Xauthority
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=default.target
